@@ -1,6 +1,7 @@
 import SimpleCV
 import numpy as np
-
+import matplotlib.pyplot as plt
+import pylab
 def myhisteq(I=SimpleCV.Image("images/lena.jpg"), N=10):
     
     Inp = I.getNumpy()    
@@ -26,8 +27,31 @@ def myhisteq(I=SimpleCV.Image("images/lena.jpg"), N=10):
     SimpleCV.Image(Ieq).show()
     return SimpleCV.Image(Ieq)
 
-I = SimpleCV.Image("images/1small.jpg")
+I = SimpleCV.Image("images/lena.jpg")
 N=255
 myhisteq()
-myhisteq(I,N).save("images/histeq-my.jpg")
+Ieq=myhisteq(I,N)
+Ieq.save("images/histeq-my.jpg")
 I.equalize().save("images/histeq-scv.jpg")
+
+h = I.getGrayNumpy().reshape(I.width*I.height,1)
+h_ = I.equalize().getGrayNumpy().reshape(I.width*I.height,1)
+hmy = Ieq.getGrayNumpy().reshape(I.width*I.height,1)
+######
+plt.hist(h)
+plt.xlabel("Greylevels")
+plt.ylabel("Frequency")
+pylab.savefig("hist-orig.jpg")
+plt.close()
+######
+plt.hist(h_)
+plt.xlabel("Greylevels")
+plt.ylabel("Frequency")
+pylab.savefig("hist-eq.jpg")
+plt.close()
+#####
+plt.hist(hmy)
+plt.xlabel("Greylevels")
+plt.ylabel("Frequency")
+pylab.savefig("hist-my.jpg")
+plt.close()

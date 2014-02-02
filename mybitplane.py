@@ -8,7 +8,7 @@ def mybitplane(I):
         bitplanes[i] = Inp&(2**i)
         Ii = SimpleCV.Image(bitplanes[i]).binarize()
         #bitplanes[i] = Ii.getNumpy()[:,:,0]/255
-        
+         
         bitplanes[i] = bitplanes[i]/2**i
         Ii.save("images/BitPlane"+str(i)+".jpg")
     return bitplanes
