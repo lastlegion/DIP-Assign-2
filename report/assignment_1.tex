@@ -107,8 +107,33 @@
         \centering
         \includegraphics[clip,height=3cm]{histeq-my}
         \includegraphics[clip,height=3cm]{histeq-scv}
-        \caption{WaterMark applied on different layers of the original image. Starting from level 0(top-left) to level 7 in a clock-wise direction}
+        \caption{Clockwise starting from top left; Original Image; Image output of our histogram equalization; Image output of built-in histogram equalization}
+    \end{figure}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[clip,height=5cm]{hist-orig}
+        \includegraphics[clip,height=5cm]{hist-my}
+        \includegraphics[clip,height=5cm]{hist-eq}
+        \caption{Clockwise starting from top left; Original Histogram; Output of our histogram equalization; Output of built-in histogram equalization}
     \end{figure}
 
-   
+\section{Convolution}
+We implemeneted a function \texttt{my2Dconv()} that takes an Image(\(I\)) and kernel(\(k\)) and output \(y=I*k\).         
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[clip,height=5cm]{convolvemy}
+        \includegraphics[clip,height=5cm]{convolvescv}
+        \caption{Outputs using kernel \(k = \begin{pmatrix}
+                                            1 & 2 & 1 \\
+                                            0 & 0 & 0 \\
+                                            -1 & -2 & -1
+                                            \end{pmatrix}
+                                        \)
+            Left: Using my2DConv function.
+            Right: Using built-in function
+                }
+    \end{figure}
+
+
+
 \end{document}
