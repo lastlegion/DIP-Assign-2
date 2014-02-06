@@ -174,21 +174,21 @@ Given a \(3X3\) neighbourhood(\(F\)) of an image
     \\
     \(
       M_{w1} = \begin{bmatrix}
-            0.4 && 0.9 && 0.4\\
-            0.4 && 0.9 && 0.4\\
-            0.4 && 0.9 && 0.4
+            0.1 && 0.2 && 0.1\\
+            0.2 && 0.4 && 0.2\\
+            0.1 && 0.2 && 0.1
           \end{bmatrix}
       \\
       M_{w2} = \begin{bmatrix}
-            -0.67 && -1.33 && -0.67\\
+            -0.17 && -0.33 && -0.17\\
               0 && 0 && 0  \\
-             0.67 && 1.33 && 0.67
+             0.17 && 0.33 && 0.17
           \end{bmatrix}
       \\
       M_{w3} = \begin{bmatrix}
-            0 &&  0 && 0 \\ 
-            0 && 0 &&  0 \\ 
-            0 && 0 &&  0
+            -0.17 &&  0 && 0.17 \\ 
+            -0.33 && 0 &&  0.33 \\ 
+            -0.17 && 0 &&  0.17
           \end{bmatrix}
     \)
     \subsection{Results}
@@ -205,5 +205,6 @@ Given a \(3X3\) neighbourhood(\(F\)) of an image
 
         \caption{Starting from top-left, results of applying the convolution masks dervied(\(M1,M2,M3,M_{w1}, M_{w2}, M_{w3}\)) in clockwise direction. }
     \end{figure}
-        We observe that these masks work like the Sobel masks for edge detection. Results of \(M2, M3\) are similar to Sobel mask in X and Y orientation.
+        
+    We observe that the masks work like the masks for edge detection. Results of \(M2, M2\) are similar to Prewitt operator. Results of \(M_{w2}, M_{w3}\) are similar to Sobel mask in X and Y orientation.
 \end{document}
